@@ -4,7 +4,7 @@
 
 ragdesk is a full-stack retrieval-augmented generation (RAG) app: upload PDFs, Markdown or text files, and ask questions in plain language. Answers are grounded in your documents, with numbered citations you can click to see the passage they came from.
 
-![CI](https://github.com/<your-username>/ragdesk/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/kareemabdelrazek02/ragdesk/actions/workflows/ci.yml/badge.svg)
 
 **Stack:** Python · FastAPI · Qdrant (vector DB) · React · TypeScript · Vite · Docker · Docker Compose · GitHub Actions · pytest · Vitest · Ollama / any OpenAI-compatible LLM
 
