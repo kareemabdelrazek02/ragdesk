@@ -1,0 +1,12 @@
+{"question": "Which component of Nav2 computes the path across the costmap?", "expected_document": "ros2_navigation.md"}
+{"question": "What do behavior trees do when the robot gets stuck?", "expected_document": "ros2_navigation.md"}
+{"question": "What does a URDF file describe?", "expected_document": "ros2_navigation.md"}
+{"question": "Which middleware does ROS 2 use for discovery and quality of service?", "expected_document": "ros2_navigation.md"}
+{"question": "How do you prevent SQL injection?", "expected_document": "web_security.md"}
+{"question": "What is an insecure direct object reference?", "expected_document": "web_security.md"}
+{"question": "Which flags should session cookies have?", "expected_document": "web_security.md"}
+{"question": "What does a SIEM do with logs?", "expected_document": "web_security.md"}
+{"question": "Why use a multi-stage Dockerfile?", "expected_document": "containers_ci.md"}
+{"question": "What does Docker Compose describe?", "expected_document": "containers_ci.md"}
+{"question": "What does a typical GitHub Actions workflow run?", "expected_document": "containers_ci.md"}
+{"question": "Does high test coverage guarantee meaningful assertions?", "expected_document": "containers_ci.md"}

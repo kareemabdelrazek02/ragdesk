@@ -1,0 +1,44 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    volumes:
+      - qdrant_data:/qdrant/storage
+    ports:
+      - "6333:6333"
+
+  backend:
+    build: ./backend
+    environment:
+      QDRANT_URL: http://qdrant:6333
+      # Defaults run fully offline. To use a real LLM, see the README
+      # (e.g. LLM_PROVIDER=openai with Ollama via the "llm" profile).
+      LLM_PROVIDER: ${LLM_PROVIDER:-extractive}
+      EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-hashing}
+      EMBEDDING_DIM: ${EMBEDDING_DIM:-384}
+      LLM_MODEL: ${LLM_MODEL:-llama3.2}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-nomic-embed-text}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-http://ollama:11434/v1}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-ollama}
+    depends_on:
+      - qdrant
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ["llm"]
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "11434:11434"
+
+volumes:
+  qdrant_data:
+  ollama_data:
